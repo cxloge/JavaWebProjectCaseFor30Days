@@ -1,0 +1,26 @@
+.mbutton{
+         cursor:hand;
+         font-size:12pt;
+         color:white;
+         height:20px;
+         width:80px;
+         text-align:center;
+         border:1px none;
+         padding:3px 0px 0px 0px;
+         margin: 1px 0px 0px 0px;
+         background-color:#006000;
+         position:relative;
+       }
+.moverbutton{
+         cursor:hand;
+         font-size:12pt;
+         color:black;
+         height:20px;
+         width:80px;
+         text-align:center;
+         border:1px none;
+         padding:3px 0px 0px 0px;
+         margin: 1px 0px 0px 0px;
+         background-color:white;
+         position:relative;
+       }

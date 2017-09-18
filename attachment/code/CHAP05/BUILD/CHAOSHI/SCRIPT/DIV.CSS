@@ -1,0 +1,74 @@
+body{
+	margin:10px;
+	font-family:Arial;
+	font-size:15px;
+}
+#father{
+	background-color:white;
+	border:1px solid #c0c0c0;
+	position:absolute;
+	left:5%;
+	top:5%;
+	width:90%;
+	height:90%;
+}
+#message{						/*提示框div的css*/
+	background-color:white;
+	border:1px solid #c0c0c0;
+	padding:10px;
+	position:absolute;
+	left:50%;
+	top:25%;
+	width:45%;
+	height:50%;
+}
+
+#Nav{						/*导航div的css*/
+	width:100px;
+	font-family:Arial;
+	font-size:15px;
+}
+#Nav ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+#Nav li{
+	border-bottom:1px solid ;#efefef
+}
+#Nav li a{
+	display:block;
+	padding:8px 5px 5px 0.6em;
+	text-decoration:none;
+	border-left:0px;
+}
+#Nav li a:link,#Nav li a:visited{
+	background-color:#48a2e0;
+	color:white
+}
+#Nav li a:hover{
+	background-color:#E97D19;
+	color:white;
+}										/*导航css结束*/
+
+.welcome	{height=100%;text-align:center;width=100%;font-size:45;vertical-align:middle;color:#CC0033;}
+
+.login_style{
+	background-color:#2FFfFo;
+	border:1px solid #C0C0C0;
+	position:absolute;
+	top:35%;
+	left:30%;
+	width:300px;
+	height:120px;
+	padding-top:20px;
+}
+.out{
+	background-color:#EBF5FD;
+	border:1px solid #C0C0C0;
+	position:absolute;
+	top:10%;
+	left:10%;
+	width:80%;
+	height:80%;
+}

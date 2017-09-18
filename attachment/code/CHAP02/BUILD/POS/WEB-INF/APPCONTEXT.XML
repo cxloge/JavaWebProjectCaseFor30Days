@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+   "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+     <!--通过JNDI获得数据源的引用-->
+     <bean id="MyDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+              <value>java:comp/env/jdbc/pos</value>
+         </property>
+     </bean>
+     
+     <!--配置Hibernate-->
+     <bean
+       id="sessionFactory" 
+       class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+     >
+     	<!--指定数据源-->
+     	<property name="dataSource">
+     		<ref local="MyDataSource" />
+     	</property>
+     	
+     	<!--给出映射文件资源-->
+     	<property name="mappingResources">
+     		<list>
+     			<value>AdminInfo.hbm.xml</value>
+     			<value>GoodsInfo.hbm.xml</value>
+     			<value>GoodsClassInfo.hbm.xml</value>
+     			<value>ConsumerInfo.hbm.xml</value>
+     			<value>ProviderInfo.hbm.xml</value>
+     			<value>StockInfo.hbm.xml</value>
+     			<value>StockDetail.hbm.xml</value>
+     			<value>SellInfo.hbm.xml</value>
+     			<value>SellDetail.hbm.xml</value>
+     			<value>ConsumerBack.hbm.xml</value>
+     			<value>ConsumerBackDetail.hbm.xml</value>
+     			<value>ProviderBack.hbm.xml</value>
+     			<value>ProviderBackDetail.hbm.xml</value>
+     		</list>
+     	</property>
+     	
+     	<!--定义hibernate配置属性-->
+     	<property name="hibernateProperties">
+     		<props>
+     			<prop key="hibernate.dialect">
+     			    org.hibernate.dialect.MySQLDialect
+     			</prop>
+     			<prop key="hibernate.show_sql">
+     			    true
+     			</prop>     		
+     		</props>
+     	</property>     
+     </bean>
+     <bean id="DButil" class="wyf.zrk.DButil">
+         <property name="sf">
+              <ref local="sessionFactory" />
+         </property>
+     </bean> 
+     <bean id="DBupdate" class="wyf.zrk.DBupdate">
+         <property name="sf">
+              <ref local="sessionFactory" />
+         </property>
+         <property name="db">
+         			<ref local="DButil" />
+         </property>
+     </bean>  
+     <bean id="DBinsert" class="wyf.zrk.DBinsert">
+         <property name="sf">
+              <ref local="sessionFactory" />
+         </property>
+         <property name="db">
+         			<ref local="DButil" />
+         </property>
+     </bean>   
+     <bean id="DBdelete" class="wyf.zrk.DBdelete">
+         <property name="sf">
+              <ref local="sessionFactory" />
+         </property>
+         <property name="db">
+         			<ref local="DButil" />
+         </property>
+     </bean>  
+</beans>

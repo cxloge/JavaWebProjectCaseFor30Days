@@ -1,0 +1,19 @@
+*{
+	margin:0;padding:0;
+}
+
+body {
+	text-align: center; min-width: 980px;background-color:white;
+}
+#container{
+	width:980px;margin:0 auto;text-align: left;background-color:white;
+}
+#tophead{
+	float:left;width:980px;margin:0 0;height:90px;background-color:#ffffd9;
+}
+#leftcontent{
+	float:left;width:180px;margin-bottom:20px;background-color:#a8cde4;border:3px outset #a8cde4;
+}
+#maincontent{
+	float:right;width:760px;margin-top:3px;border:5px outset #a8cde4;
+}

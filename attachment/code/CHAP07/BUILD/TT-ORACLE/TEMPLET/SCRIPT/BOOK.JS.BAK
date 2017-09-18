@@ -1,0 +1,28 @@
+function checkinfo(){
+	var start = document.mf_book.tstart.value.trim();
+	var end = document.mf_book.tend.value.trim();
+	var tdate = document.mf_book.tdate.value.trim();
+	var pattern = /^\d{4}-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2]\d)|(3[0-1]))$/;
+	if(start==""){
+		showErrMsg("出发城市不能为空！","tstart");
+		return;
+	}
+	if(end==""){
+		showErrMsg("目的城市不能为空！","tend");
+		return;
+	}
+	if(start==end){
+		showErrMsg("出发城市和终点城市不能相同！","tstart");
+	}
+	if(tdate==""){
+		showErrMsg("出发日期不能为空！","tdate");
+		return;
+	}	
+	if(!pattern.test(tdate)){
+		showErrMsg("日期格式不正确！","tdate");
+		return;		
+	}
+	alert("right!");
+	//document.mf_book.submit();
+	
+}

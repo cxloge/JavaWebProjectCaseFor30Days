@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.UserInfo" table="userinfo">
+		<id name="u_id" type="java.lang.Integer"></id>
+		<property name="u_name"	not-null="true" length="50"	column="`u_name`"/>
+		<property name="u_pwd" not-null="true" length="20" column="`u_pwd`" />
+		<property name="u_gender" not-null="false" length="2" column="`u_gender`"/>
+		<property name="u_email" not-null="true" length="50" column="`u_email`" />
+	</class>	
+</hibernate-mapping>

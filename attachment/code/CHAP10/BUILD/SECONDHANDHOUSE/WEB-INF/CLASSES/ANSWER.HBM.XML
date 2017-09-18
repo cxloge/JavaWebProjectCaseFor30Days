@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.AnswerInfo" table="answerinfo">
+		<id name="ai_id" type="java.lang.Integer"></id>
+		<property name="q_id"	not-null="true"	column="`q_id`"/>
+		<property name="ai_content" not-null="true" column="`ai_content`" />
+		<property name="ai_time" not-null="true" column="`ai_time`"/>
+	</class>	
+</hibernate-mapping>

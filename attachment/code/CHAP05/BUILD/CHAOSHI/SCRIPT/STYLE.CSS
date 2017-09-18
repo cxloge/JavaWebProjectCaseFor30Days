@@ -1,0 +1,66 @@
+img{
+border:0;}
+textarea{width:1}
+a
+{
+	text-decoration: none;
+	color: #000000;
+}
+a:hover
+{
+	color: red;
+	
+	text-decoration:none;
+}
+img 
+{
+	margin-right: 5px;
+	vertical-align: -3px;
+}
+font
+{
+	font-size:12pt;
+}
+.login_style{
+	background-color:#FFFFFD;
+	border:0px;
+	position:absolute;
+	top:35%;
+	left:30%;
+	width:300px;
+	height:120px;
+	padding-top:20px;
+}
+.out{
+	background-color:#EBF5FD;
+	border:1px solid #C0C0C0;
+	position:absolute;
+	top:35%;
+	left:30%;
+	width:80%;
+	height:80%;
+}
+.block{
+	background-color:white;
+	width:100px;
+	heiht:80px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.evenRow2{
+ 	height: 20px;text-align:center;font-size:15px;color:blue;cursor:hand;
+ }
+ .evenRow1{
+ 	height: 40px;background:#e3fcff;text-align:center;font-size:25px;color:#404040
+ }
+ .evenRow{
+ 	height: 20px;background:#e3fcff;text-align:center;font-size:14px;color:#404040
+ }
+
+ .evenRow{
+ 	height: 20px;background:#e3fcff;text-align:center;font-size:14px;color:#404040
+ }
+
+ .oddRow{
+ 	height: 23px;background:#f4f4f4;text-align:center;font-size:14px;color:#404040
+ }

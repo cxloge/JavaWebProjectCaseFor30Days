@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.AdminInfo" table="AdminInfo">
+		<id name="aid" type="java.lang.String"></id>
+		<property name="aname" not-null="true" length="50" column="`aname`"/>	
+		<property name="apwd" not-null="true" length="20" column="`apwd`"/>
+		<property name="alevel" not-null="true" length="20" column="`alevel`"/>
+	</class>
+</hibernate-mapping>

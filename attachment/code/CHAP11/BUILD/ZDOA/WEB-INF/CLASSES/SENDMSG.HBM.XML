@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.SendMsg" table="oa_message">
+		<id name="number" column="message_number" type="java.lang.String">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="fromU" not-null="true" length="32" column="message_fromuser"/>
+		<property name="toU" not-null="true" length="32" column="message_touser"/>
+		<property name="info" not-null="true" length="100" column="message_info"/>
+		<property name="content" not-null="true" length="4000" column="message_content"/>
+		<property name="time" not-null="true" type="java.util.Date" column="message_time"/>					
+	</class>	
+</hibernate-mapping>

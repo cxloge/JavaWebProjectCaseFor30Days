@@ -1,0 +1,65 @@
+package wyf.cgq;
+import java.util.*;
+import com.opensymphony.xwork2.*;
+import com.opensymphony.xwork2.validator.annotations.*;
+import org.apache.struts2.*;
+import java.io.*;
+import dojox.cometd.*;
+public class SendAlarmAction extends SendAlarm1Action{
+	private InsertDB insertDB;
+	private String title;
+	private String detail;
+	private String result;
+	private String deptNumber;
+	public void setInsertDB(InsertDB insertDB){
+		this.insertDB=insertDB;
+	}
+	public void setTitle(String title){
+		this.title=title;
+	}
+	public String getTitle(){
+		return this.title;
+	}
+	public void setDeptNumber(String deptNumber){
+		this.deptNumber=deptNumber;
+	}
+	public String getDeptNumber(){
+		return this.deptNumber;
+	}
+	public void setDetail(String detail){
+		this.detail=detail;
+	}
+	public String getDetail(){
+		return this.detail;
+	}
+	public String getResult(){
+		return this.result;
+	}
+	public String execute(){
+		String fromuser=((String)this.getSession().get("user")).trim();
+		Alarm alarm=new Alarm();
+		alarm.setTitle(this.title);
+		alarm.setDetail(this.detail);
+		alarm.setTime(new Date());
+		alarm.setFromuser(fromuser);
+		alarm.setDeptNumber(this.deptNumber);
+		this.insertDB.saveAlarm(alarm);
+		this.result="发送成功";
+		alarmComet();
+		return "success";
+	}
+	public Map getSession(){
+		return ActionContext.getContext().getSession();
+	}
+	private void alarmComet(){
+		Bayeux b=(Bayeux)ActionContext.getContext().getApplication().get(Bayeux.DOJOX_COMETD_BAYEUX);
+		Channel c= b.getChannel("/Alarm",true);
+		Map<String,String> message = new HashMap<String,String>();
+		message.put("deptNumber",this.deptNumber);
+		c.publish(
+			        b.newClient("server_user"),//发送的客户
+			        message,//消息
+			        "new_server_message" //消息id
+			     );
+	}
+}

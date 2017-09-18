@@ -1,0 +1,12 @@
+.content {
+	padding:10px;
+	float:right;
+	list-style:none;
+	text-align:left;
+	width:35%;
+	height:320px;
+}
+
+.content li {
+	border-bottom:1px dashed #000;
+}

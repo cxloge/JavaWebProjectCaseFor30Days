@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+   "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+     <!--通过JNDI获得数据源的引用-->
+     <bean id="MyDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+              <value>java:comp/env/jdbc/secondHandHouse</value>
+         </property>
+     </bean>
+     
+     <!--配置Hibernate-->
+     <bean  
+       id="sessionFactory" 
+       class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+     >
+     	<!--指定数据源-->
+     	<property name="dataSource">
+     		<ref local="MyDataSource" />
+     	</property>
+     	
+     	<!--给出映射文件资源-->
+     	<property name="mappingResources">
+     		<list>
+     			<value>User.hbm.xml</value>
+     			<value>Rent.hbm.xml</value>
+     			<value>Sale.hbm.xml</value>
+     			<value>Relation.hbm.xml</value>
+     			<value>Admin.hbm.xml</value>
+     			<value>Question.hbm.xml</value>
+     			<value>Answer.hbm.xml</value>
+     			<value>ContractSale.hbm.xml</value>
+     			<value>ContractRent.hbm.xml</value>
+     		</list>
+     	</property>
+     	
+     	<!--定义hibernate配置属性-->
+     	<property name="hibernateProperties">
+     		<props>
+     			<prop key="hibernate.dialect">
+     			    org.hibernate.dialect.MySQLDialect
+     			</prop>
+     			<prop key="hibernate.show_sql">
+     			    true
+     			</prop>     		
+     		</props>     	
+     	</property>     
+     </bean>
+     
+     <bean id="dbutilDAOImpl" class="wyf.zrk.DButilDAOImpl">
+         <property name="sf">
+              <ref local="sessionFactory" />
+         </property>
+     </bean>
+     
+
+</beans>

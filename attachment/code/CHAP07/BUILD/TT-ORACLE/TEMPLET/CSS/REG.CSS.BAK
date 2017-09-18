@@ -1,0 +1,107 @@
+/* Zero down margin and paddin on all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 62.5%/1.6 "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+  background-color:#FFFFFF;
+  text-align: center;
+  min-width: 760px;
+}
+
+img {
+	border:0;
+}
+
+#branding {
+  width:760px;
+  height: 160px;
+  padding: 20px;
+  background:url(../images/log.gif) no-repeat center center;
+}
+
+#wrapper {
+  width: 760px;
+  height:100%;
+  margin: 0 auto;
+  background:url(../images/bg.gif);
+}
+
+#content {
+  width:760px;
+  text-align:left;
+}
+
+#top {
+	/*background-color:#F9F3E6;*/
+	border-top:2px solid #F57708;
+	border-bottom:1px dashed #F57708;
+  	border-left:1px solid #F57708;
+  	border-right:1px solid #F57708;
+	font-size: 1em;
+	text-valign:center;
+	padding-top:0.5em;
+	padding-left:1em;
+	margin-bottom:1em;
+}
+
+#content p {
+	height:40px;
+	padding-top:1em;
+}
+
+.reg_left {
+	width:170px;
+	text-align:right;
+	padding-right:1em;
+}
+
+.reg_bg_focus {
+	background-color:#EDF2F7;
+}
+
+.reg_error {
+	padding-left:1em;
+	color:#F72A25;
+}
+
+#subButton {
+	cursor:hand;
+	border:1px solid #000;
+}
+
+
+
+#errzd {
+	z-index:2;
+	position:absolute;
+	visibility:hidden;
+	left:20;
+	top:30;
+	font-size:1px;
+	background-color:white;
+}
+
+.jd
+{
+     visibility:hidden;
+     position:absolute;
+     z-index:1;
+}
+
+.btn {
+	background-color:white;
+	cursor:hand;
+}
+
+a{
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover{
+	color: red;
+	text-decoration:none;
+}

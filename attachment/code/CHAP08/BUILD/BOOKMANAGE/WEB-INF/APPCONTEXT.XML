@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+   "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+     <!--通过JNDI获得数据源的引用-->
+     <bean id="bookDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+              <value>java:comp/env/jdbc/book</value>
+         </property>
+     </bean>
+     <!-- 配置JdbcTemplate的bean -->
+     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource">
+           <ref local="bookDataSource"/>
+        </property>
+     </bean>
+     <!-- 配置bean -->
+     <bean name="StuDB" class="wyf.wyy.StuDB">
+        <property name="jt">
+           <ref local="jdbcTemplate"/>
+        </property>
+     </bean>
+     <bean name="DBUtil" class="wyf.wyy.DBUtil">
+        <property name="jt">
+           <ref local="jdbcTemplate"/>
+        </property>
+        <property name="ds">
+        	<ref local="bookDataSource"/>
+        </property>
+     </bean>
+</beans>

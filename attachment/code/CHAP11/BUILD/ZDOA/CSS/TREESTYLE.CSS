@@ -1,0 +1,88 @@
+body{
+	text-align:center;
+	margin:0 auto;
+	padding:0;
+}
+#lefttree{
+	width:190px;
+	margin:0;
+	text-align:center;
+
+}
+ul{
+	list-style:none;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+
+li a{
+	margin:0 auto;
+	display:block;
+	background-color:#a8cde4;
+	width:150px;
+	border:medium outset #a8cde4;
+	text-decoration:none;
+	font-size:13px;
+	color:#154ba0;
+}
+li a:hover{
+	color:red;
+}
+#lefttree div a{
+	background-color:white;
+	border:none;
+	text-decoration:none;
+	font-size:12px;
+}
+#lefttree div{
+	width:150;
+	text-align:center;
+	margin:0 auto;
+	background-color:white;
+	padding:0;
+
+}
+#lefttree div a{
+	color:#154ba0;
+}
+#lefttree div a:hover{
+	color:red;
+}
+
+
+
+.nomal{
+	border:none;
+}
+
+.Up{/*ÉÏ¸¡*/
+	BORDER-TOP: 1px ridge;
+	BORDER-BOTTOM: 1px ridge;
+	BORDER-LEFT: 1px ridge;
+	BORDER-RIGHT: 1px ridge;
+	CURSOR: pointer;
+	border-color:gray;
+}
+.Down{/*ÏÂ³Á*/
+	border-color:gray;
+	BORDER-TOP: 1px groove;
+	BORDER-BOTTOM: 1px groove;
+	BORDER-LEFT: 1px groove;
+	BORDER-RIGHT: 1px groove;
+	CURSOR: pointer;
+	PADDING-TOP: 1px;
+	PADDING-BOTTOM: 1px;
+	PADDING-LEFT: 1px;
+	PADDING-RIGHT: 1px;
+}
+
+#marq a{
+	text-decoration:none;
+	font-size:13px;
+	color:#154ba0;
+}
+#marq a:hover{
+	color:red;
+	text-decoration:underline overline;
+}

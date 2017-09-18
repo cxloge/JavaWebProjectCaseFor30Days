@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.ShareFile" table="oa_sharefile">
+		<id name="number" column="share_number" type="java.lang.String">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="name" not-null="true" length="100" column="share_name"/>
+		<property name="realname" not-null="true" length="50" column="share_realname"/>
+		<property name="fromuser" not-null="true" length="32" column="share_fromuser"/>
+		<property name="time" not-null="true" type="java.util.Date" column="share_time"/>
+		<property name="title" not-null="true" length="50" column="share_title"/>
+		<property name="info" not-null="true" length="200" column="share_info"/>	
+		<property name="size" not-null="true" type="java.lang.Integer" column="share_size"/>	
+		<property name="filetype" not-null="true" length="50" column="share_filetype"/>	
+		<property name="type" not-null="true" length="32" column="share_type"/>						
+	</class>	
+</hibernate-mapping>

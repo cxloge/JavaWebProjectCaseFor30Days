@@ -1,0 +1,132 @@
+body{
+	margin:10px;
+	font-family:Arial;
+	font-size:15px;
+}
+#father{
+	background-color:white;
+	border:1px solid #c0c0c0;
+	position:absolute;
+	left:5%;
+	top:5%;
+	width:90%;
+	height:90%;
+}
+#message{						/*提示框div的css*/
+	background-color:white;
+	border:1px solid #c0c0c0;
+	padding:10px;
+	position:absolute;
+	left:50%;
+	top:20%;
+	width:45%;
+	height:50%;
+}
+#loginform{						/*登陆窗体div的css*/
+	background-color:white;
+	border:0px;
+	padding:10px;
+	position:absolute;
+	left:5%;
+	top:20%;
+	width:40%;
+	height:50%;
+}
+#search{						/*图书搜索div的css*/
+	padding:25px;
+	/*border:1px solid red;*/
+	position:absolute;	
+	left:5%;
+	top:25%;
+	width:40%;
+	height:50%;
+}
+#condition{
+	/*border:1px solid red;*/
+	padding:15px;
+	position:absolute;
+	left:6%;
+	top:18%;
+	width:40%;
+}
+#stuInfo{						/*学生信息div的css*/
+	background-color:white;
+	border:0px;
+	padding:10px;
+	position:absolute;
+	left:5%;
+	top:5%;
+	width:40%;
+	height:90%;
+}
+#Menu{						/*书刊借阅导航div的css*/
+	background-color:white;
+	border:0px;
+	padding:10px;
+	position:absolute;
+	font-size:12px;
+	left:0%;
+	top:5%;
+	width:10%;
+	height:40%;
+}
+#Nav{						/*导航div的css*/
+	width:100px;
+	font-family:Arial;
+	font-size:15px;
+}
+#Nav ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+#Nav li{
+	border-bottom:1px solid ;#efefef
+	text-align:middle;
+}
+#Nav li a{
+	display:block;
+	width:100px;
+	height:35px;
+	line-height:35px;
+	color:#000;
+	text-decoration:none;
+	background:#94b8e9 url(images/href.jpg) no-repeat left center;
+	text-indent:25px;
+}
+#Nav li a:link,#Nav li a:visited{
+	background-color:#385970;
+	display:block;
+	width:100px;
+	height:35px;
+	line-height:35px;
+	color:#000;
+	text-decoration:none;
+	
+	background:#94b8e9 url(href.jpg) no-repeat left top;
+	text-indent:25px;
+}
+#Nav li a:hover{
+	background: url(href_over.jpg) no-repeat left top;
+	color:#fff;
+}									/*导航css结束*/
+#info_table{			/*当前借阅等表格显示div的css*/
+	background-color:white;
+	border:1px solid #c0c0c0;
+	padding:10px;
+	position:absolute;
+	left:12%;
+	top:5%;
+	width:90%;
+	height:90%;
+}
+#ad_manage{						/*管理员修改密码表单div的css*/
+	background-color:white;
+	border:0px;
+	padding:10px;
+	position:absolute;
+	left:25%;
+	top:25%;
+	width:45%;
+	height:50%;
+}

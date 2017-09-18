@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.ContractRentInfo" table="contractrentinfo">
+		<id name="cr_id" type="java.lang.Integer"></id>
+		<property name="cr_first"	not-null="true" length="50"	column="`cr_first`"/>
+		<property name="cr_second"	not-null="true" length="50"	column="`cr_second`"/>
+		<property name="cr_begintime"	not-null="true"	column="`cr_begintime`"/>
+		<property name="cr_endtime"	not-null="true"	column="`cr_endtime`"/>
+		<property name="cr_price"	not-null="true"	column="`cr_price`"/>
+		<property name="cr_firstagent"	not-null="false" length="50"	column="`cr_firstagent`"/>
+		<property name="cr_secondagent"	not-null="false" length="50"	column="`cr_secondagent`"/>
+		<property name="cr_firsttel"	not-null="false" length="20"	column="`cr_firsttel`"/>
+		<property name="cr_secondtel"	not-null="false" length="20"	column="`cr_secondtel`"/>
+		<property name="cr_address"	not-null="true" length="200"	column="`cr_address`"/>
+		<property name="cr_signtime"	not-null="true"	column="`cr_signtime`"/>
+		<property name="cr_state"	not-null="true" length="20"	column="`cr_state`"/>
+	</class>
+</hibernate-mapping>

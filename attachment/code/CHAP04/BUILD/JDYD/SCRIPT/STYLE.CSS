@@ -1,0 +1,76 @@
+#errzd{
+	z-index:2;
+	visibility:hidden;
+	position:absolute;
+	left:20;
+	top:30;
+	font-size:12px;
+	background-color:white
+}
+.jd{     
+     visibility:hidden;
+     position:absolute;
+     z-index:1;
+     font-size:13px;
+     text-align:middle;
+}
+
+
+
+.orders {
+	 width:700;
+	 font-size:14px;
+   margin-top:5px;
+   background: #CCCCCC;
+ }
+ .ordersHeader {
+ 		font-size:14px;
+	 height:30px;
+   text-align: center;
+   color: black;
+   background: #E3CB98;
+ }
+.ordersFooter{
+	vertical-align:middle;
+}
+ .evenRow {
+ 	 vertical-align:middle;
+   height: 27px;
+   text-align: center;
+   background: #F7F7F7;
+   font-size:13px;
+ }
+
+ .oddRow {
+ 		vertical-align:middle;
+ 		height: 27px;
+   	text-align: center;
+   	background: #FFFBE7;
+   	font-size:13px;
+ }
+ 
+.evenRow a,.oddRow a,{
+  text-decoration: none;
+  color:#000;
+  display: block;
+}
+.evenRow a:hover,.oddRow a:hover,{
+ color:red;
+ cursor:hand;
+ text-decoration: underline;
+}
+
+.nav{/*导航菜单*/
+	margin-top:5px;
+	font-size:13px;
+	width:700;
+	height:30;
+}
+.col{/*导航菜单*/
+	width:135;
+	padding:5px,5px;
+	border:1px solid black;
+}
+.nav a{
+	text-decoration: none;
+}

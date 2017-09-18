@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.ConsumerBackDetail" table="ConsumerBackDetail">
+		<id name="cbdid" type="java.lang.String"></id>
+		<property name="cbid" not-null="true" length="20" column="`cbid`"/>	
+		<property name="gid" not-null="true" length="20" column="`gid`"/>
+		<property name="cbdamount" not-null="true" column="`cbdamount`"/>
+		<property name="cbdprice" not-null="true" column="`cbdprice`"/>
+		<property name="cbdtotalprice" not-null="true" column="`cbdtotalprice`"/>
+	</class>
+</hibernate-mapping>

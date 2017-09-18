@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.ProviderInfo" table="ProviderInfo">
+		<id name="pid" type="java.lang.String"></id>
+		<property name="pname" not-null="true" length="50" column="`pname`"/>	
+		<property name="plinkman" not-null="true" length="50" column="`plinkman`"/>
+		<property name="paddress" not-null="true" length="50" column="`paddress`"/>
+		<property name="ptel" not-null="true" length="20" column="`ptel`"/>
+		<property name="pemail" not-null="true" length="50" column="`pemail`"/>
+		<property name="premark" not-null="true" length="200" column="`premark`"/>
+	</class>
+</hibernate-mapping>

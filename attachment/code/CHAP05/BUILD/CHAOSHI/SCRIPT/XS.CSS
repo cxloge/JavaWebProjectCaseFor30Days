@@ -1,0 +1,11 @@
+#info_table{							/*商品种类列表等表格显示div的css*/
+	background-color:white;
+	border:1px solid #c0c0c0;
+	padding:10px;
+	position:absolute;
+	left:12%;
+	top:5%;
+	width:90%;
+	height:90%;
+}
+.welcome	{height=100%;text-align:center;width=100%;font-size:45;vertical-align:middle;color:#CC0033;}

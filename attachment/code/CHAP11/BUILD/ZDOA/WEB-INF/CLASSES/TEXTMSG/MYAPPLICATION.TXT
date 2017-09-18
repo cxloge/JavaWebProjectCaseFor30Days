@@ -1,0 +1,3 @@
+validate.uidempty=用户名不能为空!
+validate.pwdempty=密码不能为空!
+login.yanzhengmaerror=验证码不正确!

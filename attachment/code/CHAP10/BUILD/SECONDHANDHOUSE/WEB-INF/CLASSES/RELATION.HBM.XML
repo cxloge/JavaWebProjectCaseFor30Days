@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.RelationToUserAndMsg" table="RelationToUserAndMsg">
+		<id name="rtuam_id" type="java.lang.Integer"></id>
+		<property name="r_type"	not-null="true" length="10"	column="`r_type`"/>
+		<property name="s_id" not-null="true" column="`s_id`" />
+		<property name="u_id" not-null="true" column="`u_id`" />
+		<property name="r_agree" not-null="true" length="2" column="`r_agree`" />
+		<property name="r_linkman" not-null="false" length="20" column="`r_linkman`"/>
+		<property name="r_tel" not-null="false" length="20" column="`r_tel`"/>
+		<property name="r_email" not-null="true" length="50" column="`r_email`" />
+	</class>	
+</hibernate-mapping>

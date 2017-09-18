@@ -1,0 +1,126 @@
+drop table userinfo;
+drop table salaryinfo;
+drop table extrawork;
+drop table attendanceinfo;
+drop table holsinfo;
+
+drop table imployeeinfo;
+drop table departmentinfo;
+create table departmentinfo(
+	departId char(4) primary key,
+	departName varchar(50),
+	departNum numeric(5),
+	departDescrip text
+);
+create table imployeeinfo(
+	impId char(10) primary key,
+	impName varchar(50) not null,
+	impGender char(2) not null check(impGender='男' or impGender='女'),
+	impBirth datetime not null,
+	impEmail varchar(50) not null,
+	departId char(4) not null,
+	impRoll varchar(50) not null,
+	impSalary numeric(6,2) not null,
+	impTel varchar(20) not null,
+	impPic varchar(100),
+	impBio text,
+	impState numeric(1) default 0,
+	constraint fk1 foreign key(departId) references departmentinfo(departId)
+);
+
+create table holsinfo(
+	impId char(10),
+	applyTime datetime,
+	startTime datetime not null,
+	endTime datetime not null,
+	holdays numeric(2) not null,
+	executes varchar(500) not null,
+	holsState numeric(1) default 0,
+	constraint holskey primary key(impId,applyTime),
+	constraint fk2 foreign key(impId) references imployeeinfo(impId)
+);
+create table attendanceinfo(
+	impId char(10) not null,
+	attendTime datetime not null,
+	attendState numeric(1) default 0,
+	constraint holskey1 primary key(impId,attendTime),
+	constraint fk3 foreign key(impId) references imployeeinfo(impId)
+);
+create table extrawork(	
+	impId char(10) not null,
+	workTime datetime not null,
+	executes varchar(500) not null,
+	constraint holskey2 primary key(impId,workTime),
+	constraint fk4 foreign key(impId) references imployeeinfo(impId)
+);
+create table salaryinfo(
+	impId char(10) not null,
+	syear char(4) not null,
+	smonth char(2) not null,
+	sBase numeric(6,2) not null,
+	sExtra numeric(6,2) default 0,
+	sHoliday numeric(6,2) default 0,
+	sAbsence numeric(6,2) default 0,
+	sTotal numeric(6,2) default 0,
+	sState char(1) default 0,
+	constraint holskey3 primary key(impId,syear,smonth),
+	constraint fk5 foreign key(impId) references imployeeinfo(impId)
+);
+create table userinfo(
+	impId char(10) primary key,
+	pwd char(10) not null,
+	impRight numeric(1) not null,
+	constraint fk6 foreign key(impId) references imployeeinfo(impId)
+);
+insert into departmentinfo values('0001','人事部',2,'工资处理，人事调度');
+insert into imployeeinfo values(
+		'20050318','王亮','男','1986-11-01',
+		'cuiqiang.123@163.com','0001','正部长',
+		2000,'03152593343','impimage/1.png',
+		'王亮的个aaaaaaaaaaaaaaaaaaa人简历',0);
+insert into userinfo values('20050318','20050318',1);
+
+
+
+insert into departmentinfo values('0002','技术部',4,'开发软件，做技术');
+insert into imployeeinfo values(
+		'20050118','张亮','男','1986-10-01',
+		'cuiguoqiang.123@163.com','0002','副部长',
+		2000,'03152593343','impimage/default.png',
+		'张亮的个bbbbbbbbbbbbbbbbbbbb人简历',0);
+insert into userinfo values('20050118','20050118',2);
+
+
+insert into imployeeinfo values(
+		'20050119','王强','男','1986-10-01',
+		'cuiguoqiang.123@163.com','0002','副部长',
+		2000,'03152593343','impimage/default.png',
+		'张亮的个bbbbbbbbbbbbbbbbbbbb人简历',0);
+insert into userinfo values('20050119','20050119',2);
+
+
+insert into imployeeinfo values(
+		'20050120','周志刚','男','1986-10-01',
+		'cuiguoqiang.123@163.com','0002','副部长',
+		2000,'03152593343','impimage/default.png',
+		'张亮的个bbbbbbbbbbbbbbbbbbbb人简历',0);
+insert into userinfo values('20050120','20050120',2);
+
+
+insert into imployeeinfo values(
+		'20050320','马海涛','男','1986-10-01',
+		'cuiguoqiang.123@163.com','0001','副部长',
+		2000,'03152593343','impimage/default.png',
+		'张亮的个bbbbbbbbbbbbbbbbbbbb人简历',0);
+insert into userinfo values('20050320','20050320',1);
+
+
+
+insert into imployeeinfo values(
+		'20050218','赵亮','男','1986-06-01',
+		'guoqiang.123@163.com','0002','职工',
+		2000,'03152593343','impimage/default.png',
+		'赵亮的个人简历赵亮的个人简历赵亮的个人简历赵亮的dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',0);
+insert into userinfo values('20050218','20050218',2);
+insert into holsinfo values('20050218','2008-8-8','2008-8-20','2008-9-15',27,'生病住院',1);
+insert into holsinfo values('20050218','2008-10-8','2008-11-20','2008-12-15',27,'生病住院',0);

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="org.hibernate.auction">
+	<class name="wyf.zrk.RentInfo" table="rentinfo">
+		<id name="r_id" type="java.lang.Integer"></id>
+		<property name="r_msgtype"	not-null="true" length="10"	column="`r_msgtype`"/>
+		<property name="r_location" not-null="true" length="200" column="`r_location`" />
+		<property name="r_detail" not-null="true" length="200" column="`r_detail`"/>
+		<property name="r_longitude" not-null="true" column="`r_longitude`" />
+		<property name="r_latitude" not-null="true" column="`r_latitude`" />
+		<property name="r_wuye" not-null="true" length="100" column="`r_wuye`"/>
+		<property name="r_type" not-null="true" length="100" column="`r_type`"/>
+		<property name="r_area" not-null="true" column="`r_area`"/>
+		<property name="r_lease" not-null="true" column="`r_lease`"/>
+		<property name="r_price" not-null="true" column="`r_price`"/>
+		<property name="r_linkman" not-null="true" length="50" column="`r_linkman`"/>
+		<property name="r_address" not-null="true" length="200" column="`r_address`"/>
+		<property name="r_tel" not-null="true" length="20" column="`r_tel`"/>
+		<property name="r_email" not-null="true" length="50" column="`r_email`"/>
+		<property name="r_publishtime" not-null="true" column="`r_publishtime`"/>		
+		<property name="r_remark" not-null="true" length="200" column="`r_remark`"/>
+		<property name="u_id" not-null="true" column="`u_id`"/>
+		<property name="r_high" not-null="true" length="20" column="`r_high`"/>
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.ContractSaleInfo" table="contractsaleinfo">
+		<id name="cs_id" type="java.lang.Integer"></id>
+		<property name="cs_first"	not-null="true" length="50"	column="`cs_first`"/>
+		<property name="cs_second"	not-null="true" length="50"	column="`cs_second`"/>
+		<property name="cs_firstcardid"	not-null="true" length="18"	column="`cs_firstcardid`"/>
+		<property name="cs_secondcardid" not-null="true" length="18"	column="`cs_secondcardid`"/>
+		<property name="cs_houselocation" not-null="true" length="200"	column="`cs_houselocation`"/>
+		<property name="cs_housearea"	not-null="true"	column="`cs_housearea`"/>
+		<property name="cs_houseprice"	not-null="true"	column="`cs_houseprice`"/>
+		<property name="cs_firstagent"	not-null="false" length="50" column="`cs_firstagent`"/>
+		<property name="cs_secondagent"	not-null="false" length="50" column="`cs_secondagent`"/>
+		<property name="cs_firsttel" not-null="false" length="20" column="`cs_firsttel`"/>
+		<property name="cs_secondtel" not-null="false" length="20" column="`cs_secondtel`"/>
+		<property name="cs_signtime"	not-null="true"	column="`cs_signtime`"/>
+		<property name="cs_state"	not-null="true" length="20"	column="`cs_state`"/>
+	</class>
+</hibernate-mapping>

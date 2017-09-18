@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.Dept" table="oa_dept">
+		<id name="deptNumber" column="dept_number" type="java.lang.String"></id>
+		<property name="deptName" not-null="true" length="50" column="dept_name"/>
+	</class>	
+</hibernate-mapping>

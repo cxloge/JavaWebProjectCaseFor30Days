@@ -1,0 +1,42 @@
+body
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-top: 0px;
+	font-size: 12px;
+	font-family: ËÎÌו;
+}
+a:link 
+{
+	font-size: 15px;
+	color: #FF7F00;
+	text-decoration: none;
+}
+a:visited 
+{
+	font-size: 15px;
+	font-weight: bold;
+	color: #FF7F00;
+	text-decoration: none;
+}
+a:hover 
+{
+	font-size: 15px;
+	font-weight: bold;
+	color: #009900;
+	text-decoration: none;
+}
+a:active 
+{
+	font-size: 15px;
+	font-weight: bolder;
+	color: #FF7F00;
+	text-decoration: none;
+}
+font
+{
+	font-size:15px;
+	font-family:ËÎÌו;
+}

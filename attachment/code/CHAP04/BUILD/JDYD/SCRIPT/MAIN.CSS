@@ -1,0 +1,152 @@
+body{
+	padding-left:80px;
+	padding-right:80px;
+	margin-top:4px;
+	margin-bottom:4px;
+	background:#FFFDE8;
+	font-size:13px;
+	font: 76%/1.8 "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+.MainBox{
+	height:100%;
+	background:#EFE5C8;
+	padding:0 0;
+}
+
+.yzm{
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-bottom:1px solid #c0c0c0;
+	border-right:1px solid #c0c0c0;
+	width:4em;	
+}
+
+.input{																/*输入文本框的css*/
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-bottom:1px solid #c0c0c0;
+	border-right:1px solid #c0c0c0;
+	width:12em;
+}
+
+.input2{																/*输入文本框的css*/
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-bottom:1px solid #c0c0c0;
+	border-right:1px solid #c0c0c0;
+	width:6em;
+}
+
+
+.message{
+	color:black;
+	padding: 5px;
+	margin:2px;
+	font-size:12px;
+	vertical-align:middle;
+	text-align:middle;
+}
+
+.button{
+	cursor:hand;
+	margin-right: 1em; 
+	border: 1px solid; 
+	line-height: 1em;
+	border-color: #FFFDEE #FFFDEE #FFFDEE #FFFDEE; 
+	background: #653C00; 
+	color: white; 
+	padding: 4px 10px; 
+}
+
+.an{
+	cursor:hand;
+	border: 1px solid; 	
+	border-color: #FFFDEE #FFFDEE #FFFDEE #FFFDEE; 
+	background: #653C00; 
+	color: white;
+	padding-top:2px;
+	padding-left:5px;
+	padding-right:5px;
+	margin-left:8px;
+	font-size:12px;
+}
+
+
+
+
+.RegBox{
+	font-size:13px;
+	border:1px solid black;
+	align:center;
+	background:
+}
+.RegBox tr{
+	height:30px;
+}
+
+
+
+/* mainNav =======================*/
+ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100%;
+  background: #FAA819 url(../images/NavBg.gif) repeat-x;
+  list-style: none;
+}
+
+ul li {
+  float: left;
+}
+
+ul a {
+  padding: 0 2em;
+  line-height: 2.1em;
+  background: url(../images/NavBorder.gif) repeat-y left top;
+  text-decoration: none;
+  color: #fff;
+  float: left;
+  display: block;
+}
+
+ul a:hover {
+  color: #333;
+}
+
+ul .first a {
+  background: none;
+}
+/* mainNav over =======================*/
+
+.hidmenu{
+		width:95px;
+		text-align:center;
+		padding:0px 0px;
+		border:1px solid #CCCCCC;
+		background:#C28E38;
+	}
+		.hidmenu table{
+			font-size:13px;
+			width:100%;
+			text-align:center;
+			vertical-align:center;
+			padding:2px 2px;
+			background:#EEEEEE;
+		}
+			.hidmenu table td{
+				height:25px;
+				padding-left:3px;
+				padding-right:3px;
+				padding-top:3px;
+				padding-bottom:1px;
+				border-bottom:1px solid #CCCCCC;
+		}
+		.hidmenu table td a{
+				text-decoration:none;
+				color:black;
+		}
+		.hidmenu table td a:hover{
+				text-decoration:underline;
+				color:black;
+		}

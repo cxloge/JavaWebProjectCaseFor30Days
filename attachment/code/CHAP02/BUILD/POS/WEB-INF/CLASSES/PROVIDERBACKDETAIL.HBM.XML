@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.ProviderBackDetail" table="ProviderBackDetail">
+		<id name="pbdid" type="java.lang.String"></id>
+		<property name="pbid" not-null="true" length="20" column="`pbid`"/>	
+		<property name="gid" not-null="true" length="20" column="`gid`"/>
+		<property name="pbdamount" not-null="true" column="`pbdamount`"/>
+		<property name="pbdprice" not-null="true" column="`pbdprice`"/>
+		<property name="pbdtotalprice" not-null="true" column="`pbdtotalprice`"/>
+	</class>
+</hibernate-mapping>

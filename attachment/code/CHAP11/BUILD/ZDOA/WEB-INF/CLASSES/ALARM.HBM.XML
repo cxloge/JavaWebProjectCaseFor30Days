@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.Alarm" table="oa_alarm">
+		<id name="number" column="alarm_number" type="java.lang.String">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="fromuser" not-null="true" length="32" column="alarm_fromuser"/>
+		<property name="title" not-null="true" length="100" column="alarm_title"/>
+		<property name="detail" not-null="true" length="2000" column="alarm_detail"/>
+		<property name="time" not-null="true" type="java.util.Date" column="alarm_time"/>
+		<property name="deptNumber" not-null="true" length="32" column="alarm_dept"/>					
+	</class>	
+</hibernate-mapping>

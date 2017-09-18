@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.Role" table="oa_role" lazy="false">
+		<id name="roleNumber" column="role_number" type="java.lang.String"></id>
+		<property name="roleRight" not-null="true" type="java.lang.Integer" column="role_right"/>							
+	</class>	
+</hibernate-mapping>

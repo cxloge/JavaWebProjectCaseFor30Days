@@ -1,0 +1,12 @@
+.mouseover{
+	CURSOR: pointer;
+	background-color:#eff5fb;
+	color:#000;
+	font-weight:500;
+}
+.mouseout{
+	CURSOR: pointer;
+	background-color:#fff;
+	color:#404040;
+	font-weight:400;
+}

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="gbk" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<package name="login" extends="struts-default">
+		<action name="login" class="LoginAction">
+          	<result name="success">/login.jsp</result>
+          	<result name="mainmanage" type="redirect-action">
+          		<param name="actionName">mainManage</param>
+          	</result>
+          	<result name="input">/login.jsp</result>    
+       </action>
+       <action name="exitSys" class="exitSysAction">
+          	<result name="success">/login.jsp</result>  
+       </action>
+	</package>
+	<package name="TopManage" extends="struts-default">
+		<interceptors>
+			<interceptor name="topinterceptor" class="wyf.cgq.TopInterceptor"/>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="topinterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault"/>
+		<global-results>
+            <result name="login">/login.jsp</result>
+		</global-results>
+		<action name="manageShare" class="viewShareAction">
+          	<result name="success">/manageShare.jsp</result>  
+       </action>
+       <action name="delShare" class="delShareAction">
+       		<param name="inputPath">/sharefile</param>
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">manageShare</param>
+          	</result>  
+       </action>
+       <action name="addUser" class="addUserAction">
+          	<result name="success">/addUser.jsp</result>  
+       </action>
+       <action name="userUnique" class="userUniqueAction">
+          	<result name="success">/flag.jsp</result>  
+       </action>
+       <action name="groupList" class="groupListAction">
+          	<result name="success">/groupList.jsp</result>  
+       </action>
+       <action name="roleList" class="roleListAction">
+          	<result name="success">/roleList.jsp</result>  
+       </action>
+       <action name="addUser2" class="addUser2Action">
+       		<param name="savePath">/headpic</param>
+          	<result name="success">
+          		addUser.jsp
+          	</result>  
+          	<result name="input">
+          		addUser.jsp
+          	</result>
+       </action>
+       <action name="viewAlarm" class="viewAlarmAction">
+          	<result name="success">/viewAlarm.jsp</result>  
+       </action>
+       <action name="delAlarm" class="delAlarmAction">
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">viewAlarm</param>
+          		<param name="currenPage">${currenPage}</param>
+          	</result>
+       </action>
+       <action name="alarmDetail" class="alarmDetailAction">
+          	<result name="success">/alarmDetail.jsp</result>  
+       </action>
+       <action name="viewUser" class="viewUserAction">
+          	<result name="success">/viewUser.jsp</result>  
+       </action>
+       <action name="userDetail" class="userDetailAction">
+       		<param name="savePath">/headpic</param>
+          	<result name="success">/userDetail.jsp</result>  
+       </action>
+       <action name="changepic" class="changepicAction">
+       		<param name="savePath">/headpic</param>
+       		<result name="success" type="redirect-action">
+          		<param name="actionName">userDetail</param>
+          		<param name="userNumber">${userNumber}</param>
+          		<param name="result">${result}</param>
+          	</result>
+       </action>
+       <action name="attTime" class="attTimeAction">
+          	<result name="success">/attTime.jsp</result>  
+       </action>
+       <action name="changeAtt" class="changeAttAction">
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">attTime</param>
+          	</result>
+       </action>
+       <action name="viewAtt" class="viewAttAction">
+          	<result name="success">/viewAtt.jsp</result>  
+       </action>
+       <action name="allDoc" class="allDocAction">
+          	<result name="success">/allDoc.jsp</result>  
+       </action>
+	</package>
+	<package name="middlemanage" extends="struts-default">
+   		<interceptors>
+			<interceptor name="middleinterceptor" class="wyf.cgq.MiddleInterceptor"/>
+			<interceptor-stack name="mydefault2">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="middleinterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault2"/>
+		<global-results>
+            <result name="login">/login.jsp</result>
+		</global-results>
+		<action name="viewDoc" class="viewDocAction">
+          	<result name="success">/viewDoc.jsp</result>  
+       </action>
+		<action name="opDoc" class="opDocAction">
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">viewDoc</param>
+          	</result>
+       </action>
+	</package>
+	
+   <package name="bottommanage" extends="struts-default">
+       <interceptors>
+			<interceptor name="bottominterceptor" class="wyf.cgq.BottomInterceptor"/>
+			<interceptor-stack name="mydefault3">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="bottominterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault3"/>
+		<global-results>
+            <result name="login">/login.jsp</result>
+		</global-results>
+	   <action name="mainManage" class="mainManageAction">
+          	<result name="success">/mainManage.jsp</result>  
+       </action>
+		<action name="sendFile" class="sendFileAction">
+		  	<result name="success">/sendFile.jsp</result>  
+		</action>  
+		<action name="sendFile2" class="sendFile2Action">
+			<param name="savePath">/transfile</param>
+			<result name="success" type="redirect-action">
+		  		<param name="actionName">sendFile</param>
+		  	</result>
+		</action>
+       <action name="userListAction" class="userListAction">
+          	<result name="success">/userlist.jsp</result>  
+       </action>
+
+       <action name="receiveFile" class="receiveFileAction">
+          	<result name="success">/receiveFile.jsp</result>  
+       </action>  
+       <action name="loadFile" class="loadFileAction">
+       		<param name="inputPath">/transfile</param>
+       		<param name="filename">中文附件.txt</param>
+          	<result name="success" type="stream">
+          		<param name="contentType">${fileType}</param>
+          		<param name="inputName">inputName</param>
+          		<param name="contentDisposition">attachment;filename="${downloadName}"</param>
+          		<param name="bufferSize">4096</param>
+          	</result>
+       </action> 
+       <action name="delTransFile" class="delTransFileAction">
+       		<param name="inputPath">/transfile</param>
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">receiveFile</param>
+          	</result> 
+       </action> 
+       <action name="uploadShare" class="uploadShareAction">
+          	<result name="success">/uploadShare.jsp</result>  
+       </action>
+       <action name="uploadShare2" class="uploadShare2Action">
+       		<param name="savePath">/sharefile</param>
+       		<result name="success" type="redirect-action">
+          		<param name="actionName">uploadShare</param>
+          	</result> 
+          	<result name="input" type="redirect-action">
+          		<param name="actionName">uploadShare</param>
+          	</result> 
+       </action>
+       <action name="viewShare" class="viewShareAction">
+          	<result name="success">/viewShare.jsp</result>  
+       </action>
+       <action name="loadShare" class="loadShareAction">
+       		<param name="inputPath">/sharefile</param>
+       		<param name="filename">中文附件.txt</param>
+          	<result name="success" type="stream">
+          		<param name="contentType">${fileType}</param>
+          		<param name="inputName">inputName</param>
+          		<param name="contentDisposition">attachment;filename="${downloadName}"</param>
+          		<param name="bufferSize">4096</param>
+          	</result>
+       </action> 
+       <action name="sendMessage" class="sendMessageAction">
+          	<result name="success">/sendMessage.jsp</result>  
+       </action> 
+       <action name="sendMessage2" class="sendMessage2Action">
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">sendMessage</param>
+          	</result>
+       </action> 
+       <action name="receiveMessage" class="receiveMessageAction">
+          	<result name="success">/receiveMessage.jsp</result>  
+       </action>
+       <action name="msgDetail" class="msgDetailAction">
+          	<result name="success">/msgDetail.jsp</result>  
+       </action>
+       <action name="delMessage" class="delMessageAction">
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">receiveMessage</param>
+          		<param name="currenPage">${currenPage}</param>
+          	</result>
+       </action>
+       <action name="changePwd" class="changePwdAction">
+          	<result name="success">/changePwd.jsp</result>  
+       </action>
+       <action name="sendEmail" class="sendEmailAction">
+          	<result name="success">/sendEmail.jsp</result>  
+       </action>
+       <action name="sendAlarm1" class="sendAlarm1Action">
+          	<result name="success">/sendAlarm.jsp</result>  
+       </action>
+       <action name="sendAlarm" class="sendAlarmAction">
+          	<result name="success">/sendAlarm.jsp</result>  
+       </action>
+       <action name="attOnline" class="attOnlineAction">
+          	<result name="success">/attOnline.jsp</result>  
+       </action>
+       <action name="kaoQin" class="kaoQinAction">
+          	<result name="success" type="redirect-action">
+          		<param name="actionName">attOnline</param>
+          	</result>
+       </action>
+       <action name="leftTree" class="leftTreeAction">
+          	<result name="success">/lefttree.jsp</result>  
+       </action>
+       <action name="top" class="topAction">
+          	<result name="success">/top.jsp</result>  
+       </action>
+       <action name="sendDoc" class="sendDocAction">
+          	<result name="success">/sendDoc.jsp</result>  
+       </action>
+       <action name="sendDoc2" class="sendDoc2Action">
+          	<result name="success">/sendDoc.jsp</result>  
+       </action>
+
+       <action name="docPro" class="docProAction">
+          	<result name="success">/docPro.jsp</result>  
+       </action>
+       <action name="readDoc" class="readDocAction">
+          	<result name="success">/readDoc.jsp</result>  
+       </action>
+       <action name="myDoc" class="myDocAction">
+          	<result name="success">/myDoc.jsp</result>  
+       </action>
+   </package>
+</struts>

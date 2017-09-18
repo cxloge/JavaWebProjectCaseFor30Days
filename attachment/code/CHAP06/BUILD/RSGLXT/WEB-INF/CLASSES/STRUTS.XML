@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.multipart.maxSize" value="5242880" />
+   <package name="login" extends="struts-default">
+       <action name="login" class="wyf.cgq.LoginAction">
+          	<result name="success">/Login.jsp</result>
+          	<result name="manage" type="redirect-action">
+          		<param name="actionName">impleeyList</param>
+          	</result>
+          	<result name="personal" type="redirect-action">
+          		<param name="actionName">personInfo</param>
+          	</result>
+          	<result name="input">/Login.jsp</result>    
+       </action>
+       <action name="zhuXiao" class="wyf.cgq.ZhuXiaoAction">
+       		<result name="success">/Login.jsp</result>
+       </action>     
+   </package>
+   <package name="manage" extends="struts-default">
+   		<interceptors>
+			<interceptor name="manageinterceptor" class="wyf.cgq.RightInterceptor"/>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="manageinterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault"/>
+		<global-results>
+            <result name="login">/Login.jsp</result>
+		</global-results>
+		
+       <action name="impleeyList" class="wyf.cgq.ImpleeyListAction">
+          	<result name="success">/ImpList.jsp</result>
+          	<result name="input">/ImpList.jsp</result>
+          	<result>/ImpList.jsp</result>  
+       </action> 
+       
+       
+       <action name="impDetail" class="wyf.cgq.ImpleeyDetailAction">
+       		<result name="success">/ImpDetail.jsp</result>
+       </action>
+       <action name="addImpleey" class="wyf.cgq.AddImpleeyAction">
+       		<interceptor-ref name="fileUpload">
+       			<param name="allowedTypes">image/bmp,image/x-png,image/png,image/gif,image/pjpeg,image/jpg</param>
+       			<param name="maximumSize">5048576</param>
+       		</interceptor-ref>
+       		<interceptor-ref name="mydefault"/>
+       		<param name="savePath">/impimage</param>
+       		<result name="success">/AddImp.jsp</result>
+       		<result name="input">/AddImp.jsp</result>
+       </action>
+		<action name="addImpleeybase" class="wyf.cgq.AddImpleeyBaseAction">
+			<result name="input">/AddImp.jsp</result>
+       		<result name="success">/AddImp.jsp</result>
+       </action>
+       <action name="departmentList" class="wyf.cgq.DepartmentListBaseAction">
+			<result name="input">/DepartList.jsp</result>
+       		<result name="success">/DepartList.jsp</result>
+       </action>
+       <action name="departImp" class="wyf.cgq.DepartImpAction">
+       		<result name="success">/DepartImp.jsp</result>
+       </action>
+       <action name="departDetail" class="wyf.cgq.DepartDetailAction">
+       		<result name="success">/DepartDetail.jsp</result>
+       </action>
+       <action name="editDepart" class="wyf.cgq.EditDepartAction">
+       		<result name="success">/EditDepart.jsp</result>
+       </action>
+       <action name="editDepartSave" class="wyf.cgq.EditDepartSaveAction">
+       		<result name="success">/EditDepart.jsp</result>
+       </action>
+       <action name="delDepart" class="wyf.cgq.DelDepartAction">
+       		<result name="success">/DepartList.jsp</result>
+       </action>
+       <action name="addDepart" class="wyf.cgq.AddDepartAction">
+       		<result name="success">/addDepartment.jsp</result>
+       		<result name="input">/addDepartment.jsp</result>
+       </action>
+       <action name="qianDaoOp" class="wyf.cgq.QianDaoOpAction">
+       		<result name="success" type="redirect-action">
+          		<param name="actionName">qianDao</param>
+          	</result>
+       		<result name="fail">/QianDaoOption.jsp</result>
+       		<result name="input">/QianDaoOption.jsp</result>
+       </action>
+       <action name="qianDao" class="wyf.cgq.QianDaoAction">
+       		<result name="success">/QianDao.jsp</result>
+       </action>
+       <action name="qianDao2" class="wyf.cgq.QianDao2Action">
+       		<result name="success">/QianDao.jsp</result>
+       </action>
+       <action name="todayAttend" class="wyf.cgq.TodayAttendAction">
+       		<result name="success">/TodayAttend.jsp</result>
+       </action>
+       <action name="qingJiaDetail" class="wyf.cgq.QingJiaDetailAction">
+       		<result name="success">/QingJiaDetail.jsp</result>
+       </action>
+       <action name="addExtraWork" class="wyf.cgq.AddExtraWorkAction">
+       		<result name="success">/AddExtraWork.jsp</result>
+       		<result name="input">/AddExtraWork.jsp</result>
+       </action>
+       <action name="personEW" class="wyf.cgq.PersonEWAction">
+       		<result name="success">/PersonEW.jsp</result>
+       		<result name="input">/PersonEW.jsp</result>
+       </action>
+       <action name="delExtrawork" class="wyf.cgq.DelExtraWorkAction">
+       		<result name="success">/PersonEW.jsp</result>
+       		<result name="input">/PersonEW.jsp</result>
+       </action>
+       <action name="extraworkDetail" class="wyf.cgq.ExtraWorkDetailAction">
+       		<result name="success">/ExtraWorkDetail.jsp</result>
+       </action>
+       <action name="departEW" class="wyf.cgq.DepartEWAction">
+       		<result name="success">/DepartEW.jsp</result>
+       		<result name="input">/DepartEW.jsp</result>
+       </action>
+       <action name="delDExtrawork" class="wyf.cgq.DelDepartEWAction">
+       		<result name="success">/DepartEW.jsp</result>
+       		<result name="input">/DepartEW.jsp</result>
+       </action>
+       
+       <action name="kaoQinSearch" class="wyf.cgq.KaoQinSearchAction">
+       		<result name="success">/KaoQinSearch.jsp</result>
+       		<result name="input">/KaoQinSearch.jsp</result>
+       </action>
+       <action name="searchImp" class="wyf.cgq.SearchImpAction">
+       		<result name="success">/SearchImp.jsp</result>
+       </action>
+       <action name="delImp" class="wyf.cgq.DelImpAction">
+       		<result name="success">/SearchImp.jsp</result>
+       </action>
+       <action name="editImpbase" class="wyf.cgq.EditImpBaseAction">
+       		<result name="success">/EditImp.jsp</result>
+       </action>
+       <action name="editImp" class="wyf.cgq.EditImpAction">
+       		<interceptor-ref name="fileUpload">
+       			<param name="allowedTypes">image/bmp,image/x-png,image/png,image/gif,image/pjpeg,image/jpg</param>
+       			<param name="maximumSize">5048576</param>
+       		</interceptor-ref>
+       		<interceptor-ref name="mydefault"/>
+       		<param name="savePath">/impimage</param>
+       		<result name="success">/EditImp.jsp</result>
+       		<result name="input">/EditImp.jsp</result>
+       </action>
+       
+       
+       
+       
+       <action name="comSalaryOp" class="wyf.cgq.ComSalaryOpAction">
+       		<result name="success" type="redirect-action">
+          		<param name="actionName">salaryTable</param>
+          	</result>
+       		<result name="fail">/ComSalary.jsp</result>
+       		<result name="input">/ComSalary.jsp</result>
+       </action>
+       <action name="salaryTable" class="wyf.cgq.SalaryTableAction">
+       		<result name="success">/SalaryTable.jsp</result>
+       </action>
+       <action name="faFangSalary" class="wyf.cgq.FaFangSalaryAction">
+       		<result name="success">/SalaryTable.jsp</result>
+       </action>
+       
+       <action name="dualApply" class="wyf.cgq.DualApplyAction">
+       		<result name="success">/DualApply.jsp</result>
+       </action>
+       
+       <action name="dualApple1" class="wyf.cgq.DualApply1Action">
+       		<result name="success">/DualApply.jsp</result>
+       </action>
+   </package>
+   
+   
+   
+   <package name="personal" extends="struts-default">
+   	
+   		<interceptors>
+			<interceptor name="personalinterceptor" class="wyf.cgq.PersonalInterceptor"/>
+			<interceptor-stack name="mydefault2">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="personalinterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault2"/>
+		<global-results>
+            <result name="login">/Login.jsp</result>
+		</global-results>
+		
+       <action name="personInfo" class="wyf.cgq.PersonInfoAction">
+          	<result name="success">/Personal.jsp</result>   
+       </action>   
+       <action name="pKaoQin" class="wyf.cgq.PKaoQinAction"> 
+          	<result name="success">/PKaoQin.jsp</result>   
+       </action>  
+       <action name="pSalaryList" class="wyf.cgq.PSalaryListAction"> 
+          	<result name="success">/PSalaryList.jsp</result>   
+       </action> 
+       <action name="apply" class="wyf.cgq.ApplyAction"> 
+          	<result name="success">/apply.jsp</result>   
+          	<result name="input">/apply.jsp</result>
+       </action> 
+       <action name="appSearch" class="wyf.cgq.AppSearchAction"> 
+          	<result name="success">/appSearch.jsp</result>   
+       </action> 
+       <action name="cheXiaoApply" class="wyf.cgq.CheXiaoApplyAction">
+       		<result name="success">/appSearch.jsp</result>
+       </action>
+       <action name="changePwd" class="wyf.cgq.ChangePwdAction">
+       		<result name="success">/ChangePwd.jsp</result>
+       </action>
+       
+   </package>
+</struts>

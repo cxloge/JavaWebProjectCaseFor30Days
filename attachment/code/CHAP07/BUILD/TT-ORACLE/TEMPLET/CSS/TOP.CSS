@@ -1,0 +1,49 @@
+/* Zero down margin and paddin on all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 62.5%/1.6 "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+  background-color:#FFFFFF;
+  text-align: center;
+  min-width: 760px;
+}
+
+#branding {
+  width:760px;
+  height: 160px;
+  padding: 20px;
+  background:url(../images/log.gif) no-repeat center center;
+}
+
+#content {
+  width:760px;
+}
+
+#wrapper {
+  width: 760px;
+  height:100%;
+  margin: 0 auto;
+  background:url(../images/bg.gif);
+}
+
+#top {
+	background-color:#C1DCF7;
+	border-top:2px solid #F57708;
+	text-valign:center;
+	text-align:left;
+	height:40px;
+	padding-top:1em;
+	padding-left:1em;
+}
+
+a{
+	text-decoration: none;
+	color: #000000;
+}
+a:hover{
+	color: red;
+	text-decoration:none;
+}

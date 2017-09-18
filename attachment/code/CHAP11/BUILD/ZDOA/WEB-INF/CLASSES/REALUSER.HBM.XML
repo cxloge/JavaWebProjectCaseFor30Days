@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.RealUser" table="oa_user" lazy="false">
+		<id name="userNumber" column="user_number" type="java.lang.String"></id>
+		<property name="userName" not-null="true" length="50" column="user_realname"/>	
+		<property name="deptNumber" not-null="true" length="32" column="dept_number"/>						
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.ProviderBack" table="ProviderBack">
+		<id name="pbid" type="java.lang.String"></id>
+		<property name="pid" not-null="true" length="20" column="`pid`"/>
+		<property name="sid" not-null="true" length="20" column="`sid`"/>	
+		<property name="pbdate" not-null="true" column="`pbdate`"/>
+	</class>
+</hibernate-mapping>

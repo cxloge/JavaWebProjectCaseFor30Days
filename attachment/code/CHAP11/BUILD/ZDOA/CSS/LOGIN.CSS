@@ -1,0 +1,39 @@
+body{
+	text-align:center;margin:0 auto;
+}
+#container{
+	width:800px;margin:0 auto;background-color:#d6d6d4;
+}
+#topimg{
+	width:800px;height:359px;
+}
+#loginmain{
+	width:800px;height:200px;
+}
+#uid{
+	width:170px;height:20px;
+}
+#pwd{
+	width:170px;height:20px;
+}
+#yanzhengma{
+	width:50px;height:20px;
+}
+#yanzhengmatu{
+	position:absolute;
+}
+.loginbutton{
+	width:60px;
+}
+.resetbutton{
+	width:60px;
+}
+table{
+	font-size:14px;
+}
+.jd{
+	visibility:hidden;position:absolute;z-index:1;
+}
+#myerr{
+	border:red;color:red;
+}

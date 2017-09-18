@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+   "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+     	<!--通过JNDI获得数据源的引用-->
+     	<bean id="MyDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+     	  	  <property name="jndiName">
+            		  <value>java:comp/env/jdbc/zdoa</value>
+      	  	 </property>
+   	 </bean>
+	<!--配置Hibernate-->
+     	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+     		<!--指定数据源-->
+     		<property name="dataSource">
+     			<ref local="MyDataSource" />
+     		</property>
+     		<!--给出映射文件资源-->
+     		<property name="mappingResources">
+     			<list>
+     				<value>User.hbm.xml</value>
+				<value>Role.hbm.xml</value>
+				<value>Dept.hbm.xml</value>
+				<value>RealUser.hbm.xml</value>
+				<value>Transfile.hbm.xml</value>
+				<value>ShareType.hbm.xml</value>
+				<value>ShareFile.hbm.xml</value>
+				<value>SendMsg.hbm.xml</value>
+				<value>Groups.hbm.xml</value>
+				<value>Roles.hbm.xml</value>
+				<value>NewUser.hbm.xml</value>
+				<value>Alarm.hbm.xml</value>
+     			</list>
+     		</property>
+     		<!--定义hibernate配置属性-->
+     		<property name="hibernateProperties">
+     			<props>
+     				<prop key="hibernate.dialect">
+     				    org.hibernate.dialect.OracleDialect
+     				</prop>
+     				<prop key="hibernate.show_sql">
+     				    true
+     				</prop>     		
+     			</props>     	
+     		</property>
+     	</bean>
+	<bean id="loginDB" class="wyf.cgq.LoginDB" singleton="false">
+		<property name="sf">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="LoginAction" class="wyf.cgq.LoginAction" singleton="false">
+		<property name="loginDB">
+			<ref local="loginDB"/>
+		</property>
+	</bean>
+	<bean id="searchDB" class="wyf.cgq.SearchDB" singleton="false">
+		<property name="sf">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="insertDB" class="wyf.cgq.InsertDB" singleton="false">
+		<property name="sf">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+
+
+
+
+	<bean id="mainManageAction" class="wyf.cgq.MainManageAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+
+
+
+
+
+	<bean id="sendFileAction" class="wyf.cgq.SendFileAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="userListAction" class="wyf.cgq.UserListAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="sendFile2Action" class="wyf.cgq.SendFile2Action" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="fenYeAction" class="wyf.cgq.FenYeAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="receiveFileAction" class="wyf.cgq.ReceiveFileAction" singleton="false">
+	</bean>
+	<bean id="loadFileAction" class="wyf.cgq.LoadFileAction" singleton="false">
+	</bean>
+	<bean id="delTransFileAction" class="wyf.cgq.DelTransFileAction" singleton="false">
+	</bean>
+	<bean id="uploadShareAction " class="wyf.cgq.UploadShareAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="uploadShare2Action " class="wyf.cgq.UploadShare2Action" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="viewShareAction" class="wyf.cgq.ViewShareAction" singleton="false">
+	</bean>
+	<bean id="loadShareAction" class="wyf.cgq.LoadShareAction" singleton="false">
+	</bean>
+	<bean id="delShareAction" class="wyf.cgq.DelShareAction" singleton="false">
+	</bean>
+	<bean id="sendMessageAction" class="wyf.cgq.SendMessageAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="sendMessage2Action" class="wyf.cgq.SendMessage2Action" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="receiveMessageAction" class="wyf.cgq.ReceiveMessageAction" singleton="false">
+	</bean>
+	<bean id="msgDetailAction" class="wyf.cgq.MsgDetailAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="delMessageAction" class="wyf.cgq.DelMessageAction" singleton="false">
+	</bean>
+	<bean id="addUserAction" class="wyf.cgq.AddUserAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="userUniqueAction" class="wyf.cgq.UserUniqueAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="groupListAction" class="wyf.cgq.GroupListAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="roleListAction" class="wyf.cgq.RoleListAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="addUser2Action" class="wyf.cgq.AddUser2Action" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="changePwdAction" class="wyf.cgq.ChangePwdAction" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	   	<property name="host">
+	  	 	   <value>smtp.sina.com</value>
+	  	 </property>
+	  	 <property name="username">
+	   		  <value>zhaoxuemin_123</value>
+	  	 </property>
+	  	 <property name="password">
+	    		 <value>min22508691</value>
+	   	 </property>
+		<property name="javaMailProperties"> 
+  			<props> 
+ 				 <prop key="mail.smtp.auth">true</prop> 
+  				 <prop key="mail.smtp.timeout">25000</prop> 
+ 			 </props> 
+  		 </property>
+	</bean>
+	<bean id="sendEmailAction" class="wyf.cgq.SendEmailAction" >
+     		<property name="mailSender">	
+			<ref local="mailSender" />
+		</property>
+    	</bean>
+	<bean id="sendAlarm1Action" class="wyf.cgq.SendAlarm1Action" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="sendAlarmAction" class="wyf.cgq.SendAlarmAction" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="viewAlarmAction" class="wyf.cgq.ViewAlarmAction" singleton="false">
+	</bean>
+	<bean id="delAlarmAction" class="wyf.cgq.DelAlarmAction" singleton="false">
+	</bean>
+	<bean id="alarmDetailAction" class="wyf.cgq.AlarmDetailAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="viewUserAction" class="wyf.cgq.ViewUserAction" singleton="false">
+	</bean>
+	<bean id="userDetailAction" class="wyf.cgq.UserDetailAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="changepicAction" class="wyf.cgq.ChangepicAction" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="attTimeAction" class="wyf.cgq.AttTimeAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="changeAttAction" class="wyf.cgq.ChangeAttAction" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="dailyTask" class="wyf.cgq.DailyTask" singleton="false">
+	</bean>
+	<bean id="scheduleDailyTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="timerTask" ref="dailyTask"/>
+		<property name="period" value="1000000"/>
+	</bean>
+	<bean class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<ref bean="scheduleDailyTask"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="attOnlineAction" class="wyf.cgq.AttOnlineAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="kaoQinAction" class="wyf.cgq.KaoQinAction" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="viewAttAction" class="wyf.cgq.ViewAttAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="leftTreeAction" class="wyf.cgq.LeftTreeAction" singleton="false">
+	</bean>
+	<bean id="topAction" class="wyf.cgq.TopAction" singleton="false">
+	</bean>
+	<bean id="sendDocAction" class="wyf.cgq.SendDocAction" singleton="false">
+	</bean>
+	<bean id="sendDoc2Action" class="wyf.cgq.SendDoc2Action" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="viewDocAction" class="wyf.cgq.ViewDocAction" singleton="false">
+	</bean>
+	<bean id="docProAction" class="wyf.cgq.DocProAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="readDocAction" class="wyf.cgq.ReadDocAction" singleton="false">
+		<property name="searchDB">
+			<ref local="searchDB"/>
+		</property>
+	</bean>
+	<bean id="opDocAction" class="wyf.cgq.OpDocAction" singleton="false">
+		<property name="insertDB">
+			<ref local="insertDB"/>
+		</property>
+	</bean>
+	<bean id="allDocAction" class="wyf.cgq.AllDocAction" singleton="false">
+	</bean>
+	<bean id="myDocAction" class="wyf.cgq.MyDocAction" singleton="false">
+	</bean>
+	<bean id="exitSysAction" class="wyf.cgq.ExitSysAction" singleton="false">
+	</bean>
+</beans>
+
+
+
+

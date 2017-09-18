@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.NewUser" table="oa_user">
+		<id name="userNumber" column="user_number" type="java.lang.String">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="userName" not-null="true" length="20" column="user_name"/>
+		<property name="userPwd" not-null="true" length="20" column="user_pwd"/>
+		<property name="realName" not-null="true" length="50" column="user_realname"/>
+		<property name="gender" not-null="true" length="2" column="user_gender"/>
+		<property name="birth" not-null="true" type="java.util.Date" column="user_birth"/>
+		<property name="deptNumber" not-null="true" length="32" column="dept_number"/>
+		<property name="groupNumber" not-null="true" length="32" column="group_number"/>
+		<property name="roleNumber" not-null="true" length="32" column="role_number"/>
+		<property name="email" not-null="true" length="50" column="user_email"/>
+		<property name="phone" not-null="true" length="20" column="user_phone"/>
+		<property name="jianli" not-null="true" length="4000" column="user_jianli"/>
+		<property name="imgpath" not-null="true" length="100" column="user_imgpath"/>	
+		<property name="salary" not-null="true" type="java.lang.Double" column="user_salary"/>							
+	</class>	
+</hibernate-mapping>

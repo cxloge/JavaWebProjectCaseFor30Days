@@ -1,0 +1,15 @@
+#maincontent ul{
+	margin:0;padding:0;list-style:none;width:750px;
+}
+#maincontent ul li{
+	float:left;
+}
+#maincontent ul a{
+	display:block;text-decoration:none;color:#154ba0;width:100px;height:18px;line-height:18px;
+}
+#maincontent td a{
+	text-decoration:none;color:#154ba0;
+}
+#maincontent td a:hover{
+	text-decoration:none;color:#f00;
+}

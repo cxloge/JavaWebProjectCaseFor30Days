@@ -1,0 +1,16 @@
+#errzd {
+	z-index:2;
+	visibility:hidden;
+	position:absolute;
+	left:20;
+	top:30;
+	font-size:1px;
+	background-color:white;
+}
+
+.jd {
+     visibility:hidden;
+     position:absolute;
+     z-index:1;
+     color:#FF0000;
+}

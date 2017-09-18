@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="org.hibernate.auction">
+	<class name="wyf.zrk.SaleInfo" table="saleinfo">
+		<id name="s_id" type="java.lang.Integer"></id>
+		<property name="s_msgtype"	not-null="true" length="10"	column="`s_msgtype`"/>
+		<property name="s_location" not-null="true" length="200" column="`s_location`" />
+		<property name="s_detail" not-null="true" length="200" column="`s_detail`"/>
+		<property name="s_longitude" not-null="true" column="`s_longitude`" />
+		<property name="s_latitude" not-null="true" column="`s_latitude`" />
+		<property name="s_wuye" not-null="true" length="100" column="`s_wuye`"/>
+		<property name="s_type" not-null="true" length="100" column="`s_type`"/>
+		<property name="s_area" not-null="true" column="`s_area`"/>
+		<property name="s_price" not-null="true" column="`s_price`"/>
+		<property name="s_linkman" not-null="true" length="50" column="`s_linkman`"/>
+		<property name="s_address" not-null="true" length="200" column="`s_address`"/>
+		<property name="s_tel" not-null="true" length="20" column="`s_tel`"/>
+		<property name="s_email" not-null="true" length="50" column="`s_email`"/>
+		<property name="s_publishtime" not-null="true" column="`s_publishtime`"/>
+		<property name="s_remark" not-null="true" length="200" column="`s_remark`"/>
+		<property name="u_id" not-null="true" column="`u_id`"/>
+		<property name="s_high" not-null="true" length="20" column="`s_high`"/>
+	</class>	
+</hibernate-mapping>

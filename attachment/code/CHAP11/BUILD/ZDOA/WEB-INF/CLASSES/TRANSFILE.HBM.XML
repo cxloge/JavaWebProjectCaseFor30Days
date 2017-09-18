@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.hibernate.auction">
+	<class name="wyf.cgq.Transfile" table="oa_transfile">
+		<id name="fileNumber" column="transfile_number" type="java.lang.String">
+			<generator class="uuid.hex"/>
+		</id>
+		<property name="fileName" not-null="true" type="java.lang.String" column="transfile_name"/>
+		<property name="fileRealname" not-null="true" length="50" column="transfile_realname"/>
+		<property name="fromUser" not-null="true" length="32" column="transfile_fromuser"/>
+		<property name="toUser" not-null="true" length="32" column="transfile_touser"/>
+		<property name="transTime" not-null="true" type="java.util.Date" column="transfile_time"/>
+		<property name="fileInfo" not-null="true" length="100" column="transfile_info"/>
+		<property name="fileType" not-null="true" length="50" column="transfile_type"/>						
+	</class>	
+</hibernate-mapping>

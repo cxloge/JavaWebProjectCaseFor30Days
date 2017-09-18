@@ -1,0 +1,4 @@
+a{text-decoration: none;color:#874604;}
+a:link {cursor:hand;text-decoration:none;color:red}
+a:hover{color:#179117;font-weight: bold;}
+a:active{cursor:hand;text-decoration:none;font-decoration:underline;color:#ff9900}

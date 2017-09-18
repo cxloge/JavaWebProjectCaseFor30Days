@@ -1,0 +1,46 @@
+a
+{
+	text-decoration: none;
+	color: #000000;
+}
+a:hover
+{
+	color: red;
+	font-weight: bold;
+	text-decoration:none;
+}
+img 
+{
+	margin-right: 5px;
+	vertical-align: -3px;
+}
+font
+{
+	font-size:10pt;
+}
+.login_style{
+	background-color:#FFFFFD;
+	border:1px solid #C0C0C0;
+	position:absolute;
+	top:35%;
+	left:30%;
+	width:300px;
+	height:120px;
+	padding-top:20px;
+}
+.out{
+	background-color:#EBF5FD;
+	border:1px solid #C0C0C0;
+	position:absolute;
+	top:10%;
+	left:10%;
+	width:80%;
+	height:80%;
+}
+.block{
+	background-color:white;
+	width:100px;
+	heiht:80px;
+	padding-top:10px;
+	padding-bottom:10px;
+}

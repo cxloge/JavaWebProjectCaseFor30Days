@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="gbk"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+   <!-- 配置数据源 -->
+   <resource-ref>
+       <description>DB Connection</description>
+       <res-ref-name>jdbc/zdoa</res-ref-name>
+       <res-type>javax.sql.DataSource</res-type>
+       <res-auth>Container</res-auth>
+   </resource-ref>   
+    <!--web集成Spring配置==== begin-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/appcontext.xml</param-value>
+    </context-param>    
+    <listener>
+       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!--web集成Spring配置==== end-->         
+    <!--配置Struts2的核心控制器FilterDispatcher-->
+    <filter>
+        <filter-name>struts2</filter-name>        
+        <filter-class>
+           org.apache.struts2.dispatcher.FilterDispatcher
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!--配置服务器推送的支持类-->
+    <servlet>
+    	<servlet-name>cometd</servlet-name>
+    	<servlet-class>org.mortbay.cometd.continuation.ContinuationCometdServlet</servlet-class>
+    	<load-on-startup>1</load-on-startup>
+    </servlet>
+  <servlet-mapping>
+    	<servlet-name>cometd</servlet-name>
+    	<url-pattern>/cometd/*</url-pattern>
+  </servlet-mapping>
+    <!--配置Web应用的欢迎文件-->
+    <welcome-file-list>
+	<welcome-file>
+            login.jsp
+        </welcome-file>
+    </welcome-file-list>
+</web-app>

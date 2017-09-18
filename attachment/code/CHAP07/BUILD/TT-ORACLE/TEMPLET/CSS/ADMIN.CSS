@@ -1,0 +1,261 @@
+/* Zero down margin and paddin on all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 62.5%/1.6 "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
+  background-color:#FFFFFF;
+}
+
+h1 {
+  font-size: 2.4em;
+  font-weight: normal;
+}
+
+a{
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover{
+	color: red;
+	text-decoration:none;
+}
+
+h2 {
+  font-size: 2.0em;
+  font-weight: normal;
+}
+
+p, li {
+  font-size: 1.4em;
+}
+
+h1, h2, p {
+  margin: 1em 0;
+}
+
+#branding h1 {
+  margin: 0;
+  font-size: 4em;
+  font-weight: normal;
+  text-align:center
+}
+
+#branding {
+  height: 160px;
+  padding: 20px;
+  background:url(../images/log.gif) no-repeat center center;
+}
+
+#footer {
+	margin-top:1em;
+  background-color:#F9F3E6;
+  padding: 1px 20px;
+  text-align:center;
+}
+
+/* The Core Technique
+================================= */
+
+body {
+  text-align: center;
+  min-width: 760px;
+}
+
+#wrapper {
+  width: 760px;
+  margin: 0 auto;
+  text-align: left;
+  background:url(../images/bg_left.gif) repeat-y left top;
+}
+
+#log {
+	width: 760px;
+	height:20px;
+	background-color:#F9F3E6;
+	border-top:2px solid #F57708;
+}
+
+#content {
+	width: 560px;
+	float: right;
+	margin: 1em 0;
+	border-bottom:1px solid #F57708;
+	border-left:1px solid #F57708;
+	list-style: none;
+}
+
+.login {
+	width: 175px;
+	margin: 1em 0;
+	padding: 1em;
+	border : 1px solid #F57708;
+	background-color:#F9F3E6;
+	float: left;
+	padding-bottom: 20px;
+	list-style: none;
+}
+
+.login ul {
+	margin-top:2em;
+	list-style: none;
+	text-align:center;
+}
+
+.login ul li {
+	display: inline:
+}
+
+.login ul li a {
+	text-align:left;
+	width:128px;
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  background: url(../images/bg_nav.gif) no-repeat left bottom;
+  color: #000;
+  text-decoration: none;
+  text-indent: 50px;
+}
+
+.login ul li a:hover{
+  background-position: right bottom;
+  color: #fff;
+}
+
+.search {
+	width: 100%;
+	padding: 1em;
+	border-top : 1px solid #F57708;
+	border-bottom:1px dashed #F57708;
+	border-right:1px solid #F57708;
+	border-left:1px solid #F57708;
+	background-color:#F9F3E6;
+	float: left;
+	padding-bottom: 20px;
+	list-style: none;
+}
+
+.search li {
+	padding:0.3em;
+	text-align:center;
+}
+
+legend {
+	font-weight: bold;
+}
+
+#msg {
+	width: 560px;
+	float: right;
+	margin: 0 0;
+	list-style: none;
+}
+
+#msg_top {
+	margin:0;
+	background:url(../images/msg_title.gif) no-repeat left bottom;
+	text-align:right;
+}
+
+#msg_inner {
+	border:1px solid #F57708;
+	margin:0;
+	
+}
+
+#footer {
+  clear: both;
+}
+
+/* Add some padding
+================================== */
+#content * {
+  padding-right: 20px;
+}
+
+#content * * {
+  padding-right: 0;
+}
+
+#con_title {
+	margin-top:0;
+	margin-bottom: 0.5em 0;
+	padding: 0;
+}
+#con {
+	height:300px;
+	border-right: 1px solid #F57708;
+	margin: 0;
+	padding: 0.5em;
+	background-color:#F9F3E6;
+}
+
+.train_search {
+	height:100px;
+	border-top :1px dashed #F57708;
+	border-right: 1px solid #F57708;
+	margin: 0;
+	padding: 0.5em;
+	background-color:#F9F3E6;
+}
+
+button {
+	border: 1px solid;
+	border-color: #D1E7A9 #999 #999 #D1E7A9;
+	background: #DFDFD4;
+	height: 2em;
+	line-height: 2em;
+	cursor: pointer;
+}
+#postsubmit, button.submit {
+	margin-right: 1em;
+	border: 1px solid;
+	border-color: #FFFDEE #FDB939 #FDB939 #FFFDEE;
+	background: #FFF8C5;
+	color: #090;
+	padding: 0 10px;
+}
+
+#errzd {
+	z-index:2;
+	visibility:hidden;
+	position:absolute;
+	left:20;
+	top:30;
+	font-size:1px;
+	background-color:white;
+}
+
+.jd {
+     visibility:hidden;
+     position:absolute;
+     z-index:1;
+     color:#FF0000;
+}
+
+.btn_mouseover{
+	border: solid 1px #2C59AA;
+	font-size:12px;
+	background-color:#D7E7FA;
+	cursor:hand;
+}
+.btn_mouseout{
+	border: solid 1px #2C59AA;
+	font-size:12px;
+	background-color:#C3DAF5;
+	cursor:hand;
+}
+.btn{
+	border: solid 1px #2C59AA;
+	font-size:12px;
+	background-color:#C3DAF5;
+	cursor:hand;
+	event: expression(
+	(this.onmouseover = function() {this.className='btn_mouseover';}) &&
+	(this.onmouseout = function() {this.className = 'btn_mouseout';})
+	);
+}

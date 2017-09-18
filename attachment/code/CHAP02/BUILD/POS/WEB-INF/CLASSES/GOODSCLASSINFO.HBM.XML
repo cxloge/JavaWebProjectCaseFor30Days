@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.GoodsClassInfo" table="GoodsClassInfo">
+		<id name="gcid" type="java.lang.String"></id>
+		<property name="gcname" not-null="true" length="50" column="`gcname`"/>	
+	</class>
+</hibernate-mapping>

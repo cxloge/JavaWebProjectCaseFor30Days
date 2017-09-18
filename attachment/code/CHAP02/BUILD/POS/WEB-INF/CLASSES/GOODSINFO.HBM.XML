@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="org.hibernate.auction">
+
+	<class name="wyf.zrk.GoodsInfo" table="GoodsInfo">
+		<id name="gid" type="java.lang.String"></id>
+		<property name="gname" not-null="true" length="50" column="`gname`"/>	
+		<property name="gcid" not-null="true" length="20" column="`gcid`"/>
+		<property name="gunit" not-null="true" length="10" column="`gunit`"/>
+		<property name="gpin" not-null="true" column="`gpin`"/>	
+		<property name="gpout" not-null="true" column="`gpout`"/>
+		<property name="gamount" not-null="true" column="`gamount`"/>
+	</class>
+</hibernate-mapping>

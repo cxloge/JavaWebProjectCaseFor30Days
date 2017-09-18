@@ -1,0 +1,21 @@
+1. 在Tomcat安装目录下conf目录下server.xml中最后的“</Host>”标记之前添加
+如下配置：
+
+  <Context path="/BookManage" docBase="BookManage"
+	         debug="5" reloadable="true" crossContext="true"   workDir="">
+	   <Resource   name="jdbc/book"
+	              auth="Container"
+	     type="javax.sql.DataSource"
+	              maxActive="100" maxIdle="30" maxWait="10000"
+	              username="system" password="initial"
+	     driverClassName="oracle.jdbc.driver.OracleDriver"
+	     url="jdbc:oracle:thin:@192.168.47.16:1521:orcl"/>
+	</Context>
+
+2. 在本应用的WEB-INF目录下web.xml文件中添加如下配置
+   <resource-ref>
+       <description>DB Connection</description>
+       <res-ref-name>jdbc/book</res-ref-name>
+       <res-type>javax.sql.DataSource</res-type>
+       <res-auth>Container</res-auth>
+   </resource-ref>

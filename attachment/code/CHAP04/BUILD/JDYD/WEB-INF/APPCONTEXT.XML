@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+   "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+     <!--通过JNDI获得数据源的引用-->
+     <bean id="MyDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+              <value>java:comp/env/jdbc/jdyd</value>
+         </property>
+     </bean>
+    <!-- 配置JdbcTemplate的bean -->
+     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource">
+           <ref local="MyDataSource"/>
+        </property>
+     </bean>     
+    <bean name="dbu" class="wyf.DBUtil">
+    	  <property name="jt">
+           <ref local="jdbcTemplate"/>		 <!-- 通过依赖注入jdbcTemplate -->
+        </property>
+        <property name="ds">
+           <ref local="MyDataSource"/>		 <!-- 注入数据源属性 -->
+        </property>
+     </bean>
+</beans>
